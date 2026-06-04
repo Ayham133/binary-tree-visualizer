@@ -3,7 +3,8 @@
  * @brief Ther start of the program and where main funtions is placed.
  */
 
-#include "node.h"
+#include "../include/node.h"
+#include "../include/binary_tree.h"
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>

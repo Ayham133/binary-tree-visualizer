@@ -3,7 +3,7 @@
  * @brief Initialize and implement all the function in node.h
  */
 
-#include "node.h"
+#include "../include/node.h"
 #include <stdlib.h>
 #include <stdbool.h>
 
@@ -34,6 +34,6 @@ Node *init_node(int data)
  */
 bool is_leaf(Node *node)
 {
-    return (&node != NULL && node->left == NULL && node->right == NULL);
+    return (node != NULL && node->left == NULL && node->right == NULL);
 }
 
