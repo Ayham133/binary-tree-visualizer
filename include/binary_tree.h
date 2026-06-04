@@ -35,19 +35,19 @@ bool is_empty(Binary_tree *tree);
 /**
  * @brief Add to the targeted tree a new node according to binary tree rules. with data as it's node->data. 
  * 
- * @param[in] tree      Target tree to add.
+ * @param[in] head      The head node of the tree.
  * @param[in] data      The values to store in the new node.
  * @return void
  */
-void add(Binary_tree *tree, int data);
+void add(Node **head, int data);
 
 /**
  * @brief Check if the tree containes the target value.
  * 
- * @param[in] tree      Target tree to check.
+ * @param[in] head      The head node of the tree.
  * @param[in] traget    The value to check.
  * @return  bool        Return true if the tree containes the value, false otherwise. 
  */
-bool containes(Binary_tree *tree, int tartget);
+bool containes(Node *head, int tartget);
 
 #endif
