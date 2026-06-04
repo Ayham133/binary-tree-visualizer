@@ -7,6 +7,7 @@
 #include "../include/node.h"
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 
 /**
@@ -79,4 +80,21 @@ bool containes(Node *head, int tartget)
         return containes(head->left, tartget);
     else 
         return containes(head->right, tartget);
+}
+
+/**
+ * @brief Pre-order Traversal(Rot -> left -> right). Recursively visits the left subtree, recursively visits the right subtree, and processes the root last. 
+ * 
+ * @param[in] head The head node of the tree.
+ * @return void
+ */
+void pre_order_traversal(Node *head)
+{
+    if(head == NULL)
+        return;
+
+    printf("%d ", head->data);
+    pre_order_traversal(head->left);
+    pre_order_traversal(head->right);
+
 }

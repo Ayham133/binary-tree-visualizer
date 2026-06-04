@@ -50,4 +50,12 @@ void add(Node **head, int data);
  */
 bool containes(Node *head, int tartget);
 
+/**
+ * @brief Pre-order Traversal(Rot -> left -> right). Recursively visits the left subtree, recursively visits the right subtree, and processes the root last. 
+ * 
+ * @param[in] head The head node of the tree.
+ * @return void
+ */
+void pre_order_traversal(Node *head);
+
 #endif

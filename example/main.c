@@ -12,7 +12,11 @@
 int main(void)
 {
    Binary_tree *tree = init_tree(10);
-   add(&(tree->head), 100);
+   add(&(tree->head), 15);
+   add(&(tree->head), 5);
+
+   pre_order_traversal((tree->head));
+   printf("\n");
 
     return EXIT_SUCCESS;
 }
