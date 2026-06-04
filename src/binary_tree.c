@@ -1,6 +1,6 @@
 /**
  * @file binary_tree.c
- * @brief All the implementation code for @file include/binary_tree.h
+ * @brief All the implementation code for @fi:le include/binary_tree.h
  */
 
 #include "../include/binary_tree.h"
