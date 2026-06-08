@@ -6,7 +6,7 @@ CFLAGS = -Wall
 
 app: example/main.c src/node.c src/binary_tree.c
 	mkdir -p bin
-	$(CC) $(CFLAGS) example/main.c src/node.c src/binary_tree.c -o bin/main
+	$(CC) $(CFLAGS) example/main.c src/binary_tree.c src/node.c -o bin/main -lraylib -lm -lpthread -ldl -lrt -lX11
 
 
 run: app

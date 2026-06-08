@@ -59,11 +59,11 @@ bool containes(Node *head, int tartget);
 void pre_order_traversal(Node *head);
 
 /**
- * @brief Calculate the total width of this tree.
+ * @brief Calculate the maximum width of this tree.
  * 
  * @param head      The head node(root) of this tree.
- * @return int      Retunr the total width of this tree.
+ * @return int      Retunr the maximum width of this tree.
  */
-int get_tree_width(Node *head);
+int get_max_width(Node *head);
 
 #endif
