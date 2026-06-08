@@ -22,6 +22,7 @@ int main(void)
    pre_order_traversal((tree->head));
    printf("\n");
 
+   
 
    while(!WindowShouldClose())
    {
