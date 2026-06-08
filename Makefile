@@ -2,6 +2,7 @@ CC = gcc
 CFLAGS = -Wall
 
 .PHONY = run
+.PHONY = exe 
 
 app: example/main.c src/node.c src/binary_tree.c
 	mkdir -p bin
@@ -9,4 +10,7 @@ app: example/main.c src/node.c src/binary_tree.c
 
 
 run: app
+	./bin/main
+
+exe:
 	./bin/main
