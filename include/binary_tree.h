@@ -18,10 +18,20 @@ typedef struct Binary_tree
 /**
  * @brief Creat new tree with head_data as tree->head->data.
  * 
- * @param[in] head_data        The value to store in tree's head node.
+ * @param[in] head              The root of the tree dirictely as a Node.
  * @return Binary_tree *        Return Binary_tree struct, NULL if malloc failed.
  */
-Binary_tree *init_tree(int head_data);
+Binary_tree *init_tree_node(Node *head);
+
+/**
+ * @brief Creat new tree with head_data as tree->head->data.
+ * 
+ * @param[in] head_data         The value to store in tree's head node.
+ * @param[in] x                 Center of the ball/object on the x-axis
+ * @param[in] y                 Center of the ball/object on the y-axis
+ * @return Binary_tree *        Return Binary_tree struct, NULL if malloc failed.
+ */
+Binary_tree *init_tree(int head_data, float x, float y);
 
 
 /**
@@ -35,17 +45,28 @@ bool is_empty(Binary_tree *tree);
 /**
  * @brief Add to the targeted tree a new node according to binary tree rules. with data as it's node->data. 
  * 
+ * @param[in] head          The head node of the tree.
+ * @param[in] new_node      Pointer to added node.
+ * @return Node *
+ */
+Node *addN(Node *head, Node *new_node);
+
+/**
+ * @brief Add to the targeted tree a new node according to binary tree rules. with data as it's node->data. 
+ * 
  * @param[in] head      The head node of the tree.
  * @param[in] data      The values to store in the new node.
- * @return void
+ * @return Node *
  */
-void add(Node **head, int data);
+Node *add(Node *head, int data, float x, float y);
 
 /**
  * @brief Check if the tree containes the target value.
  * 
  * @param[in] head      The head node of the tree.
  * @param[in] traget    The value to check.
+ * @param[in] x         Center of the ball/object on the x-axis
+ * @param[in] y         Center of the ball/object on the y-axis
  * @return  bool        Return true if the tree containes the value, false otherwise. 
  */
 bool containes(Node *head, int tartget);

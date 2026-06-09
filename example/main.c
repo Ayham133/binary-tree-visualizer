@@ -13,25 +13,30 @@
 
 int main(void)
 {
-   Binary_tree *tree = init_tree(10);
-   add(&(tree->head), 15);
-   add(&(tree->head), 11);
-   add(&(tree->head), 5);
-   add(&(tree->head), 1);
+
+    int window_width = 800;
+    int window_height = 450;
+   Binary_tree *tree = init_tree(10, window_width/2, 100);
+
+   Node *node = init_node(15, (window_width/2 - 100), window_height/2 - 100);
+   Node *node2 = init_node(5, (window_width/2 - 100), window_height/2 - 100);
+    tree->head = addN(tree->head, node);
+    tree->head = addN(tree->head, node2);
 
    pre_order_traversal((tree->head));
    printf("\n");
 
 
 
-   while(!WindowShouldClose())
-   {
-       BeginDrawing();
-       ClearBackground(RAYWHITE);
-       EndDrawing();
-   }
+//    while(!WindowShouldClose())
+//    {
+//        BeginDrawing();
+//        ClearBackground(RAYWHITE);
 
-   CloseWindow();
+//        EndDrawing();
+//    }
+
+//    CloseWindow();
 
     return EXIT_SUCCESS;
 }

@@ -11,9 +11,11 @@
  * @brief Inittialize node.
  * 
  * @param[in] data      The value of the created node.
+ * @param[in] x         Center of the ball/object on the x-axis
+ * @param[in] y         Center of the ball/object on the y-axis
  * @return Node         return created Node, NULL if malloc failed.
  */
-Node *init_node(int data)
+Node *init_node(int data, float x, float y)
 {
     Node *node = malloc(sizeof *node);
     if(node == NULL)
@@ -23,6 +25,7 @@ Node *init_node(int data)
     node->left = NULL;
     node->right = NULL;
 
+    node->center = (Vector2){x, y};
     return node;
 }
 

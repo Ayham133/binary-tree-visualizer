@@ -9,6 +9,25 @@
 #include <stdbool.h>
 #include <stdio.h>
 
+/**
+ * @brief Creat new tree with head_data as tree->head->data.
+ * 
+ * @param[in] head              The root of the tree dirictely as a Node.
+ * @return Binary_tree *        Return Binary_tree struct, NULL if malloc failed.
+ */
+Binary_tree *init_tree_node(Node *head)
+{
+    Binary_tree *tree = malloc(sizeof *tree);
+
+    // Allocation failed.
+    if(tree == NULL)
+        return NULL;
+    
+    tree->head = head;
+    tree->height = 1;
+
+    return tree;
+}
 
 /**
  * @brief Creat new tree with head_data as tree->head->data.
@@ -16,14 +35,15 @@
  * @param[in] head_data        The value to store in tree's head node.
  * @return Binary_tree *        Return Binary_tree struct, NULL if malloc failed.
  */
-Binary_tree *init_tree(int head_data)
+Binary_tree *init_tree(int head_data, float x, float y)
 {
     Binary_tree *tree = malloc(sizeof *tree);
 
+    // Allocation failed.
     if(tree == NULL)
         return NULL;
 
-    tree->head = init_node(head_data);
+    tree->head = init_node(head_data, x, y);
     tree->height = 1;
 
     return tree;
@@ -42,23 +62,46 @@ bool is_empty(Binary_tree *tree)
 }
 
 /**
+ * @brief Add to the targeted tree a new node according to binary tree rules. 
+ * 
+ * @param[in] head          The head node of the tree.
+ * @param[in] new_node      Pointer to added node.
+ * @return Node *
+ */
+Node *addN(Node *head, Node *new_node)
+{
+    if(head == NULL)
+        return new_node;
+
+    if(new_node->data < head->data)
+        head->left = addN(head->left, new_node);
+    else
+        head->right = addN(head->right, new_node);
+
+    return head;
+
+}
+
+/**
  * @brief Add to the targeted tree a new node according to binary tree rules. with data as it's node->data. 
  * 
  * @param[in] head      The head node of the tree.
  * @param[in] data      The values to store in the new node.
- * @return void
+ * @param[in] x         Center of the ball/object on the x-axis
+ * @param[in] y         Center of the ball/object on the y-axis
+ * @return Node *
  */
-void add(Node **head, int data)
+Node *add(Node *head, int data, float x, float y)
 {
-    if(*head == NULL)
-    { 
-        *head = init_node(data);
-        return;
-    }
-    else if(data < (*head)->data)
-        add(&(*head)->left, data);
+    if(head == NULL)
+        return init_node(data, x, y);
+
+    else if(data < head->data)
+        head->left = add(head->left, data, x, y);
     else
-        add(&(*head)->right, data);
+        head->right = add(head->right, data, x, y);
+
+    return head;
 }
 
 

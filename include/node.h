@@ -6,12 +6,14 @@
 #define NODE_H
 
 #include <stdbool.h>
+#include <raylib.h>
 
 typedef struct Node
 {
     int data;
     struct Node *right;
     struct Node *left;
+    Vector2 center;
 }Node;
 
 
@@ -27,8 +29,10 @@ bool is_leaf(Node *node);
  * @brief Inittialize node.
  * 
  * @param[in] data      The value of the created node.
+ * @param[in] x         Center of the ball/object on the x-axis
+ * @param[in] y         Center of the ball/object on the y-axis
  * @return Node         return created Node, NULL if malloc failed.
  */
-Node *init_node(int data);
+Node *init_node(int data, float x, float y);
 
 #endif
