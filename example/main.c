@@ -6,7 +6,6 @@
 #include "raylib.h"
 #include "../include/binary_tree.h"
 #include "../include/node.h"
-#include "../include/window.h"
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
